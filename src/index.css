@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html{
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'inter';
+    overflow-x: hidden;
+}
