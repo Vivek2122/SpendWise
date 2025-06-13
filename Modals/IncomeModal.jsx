@@ -15,7 +15,7 @@ function IncomeModal({ onClose }) {
 
 	const addIncomeMutation = useMutation({
 		mutationFn: async (formData) => {
-			await axios.post("https://cointraq.onrender.com/transaction/income", formData, {
+			await axios.post(`${import.meta.env.VITE_BASE_URL}/transaction/income`, formData, {
 				withCredentials: true,
 			});
 		},

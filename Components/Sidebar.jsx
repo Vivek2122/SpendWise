@@ -17,7 +17,7 @@ function Sidebar() {
 	useEffect(() => {
 		const getUserInfo = async () => {
 			try {
-				const res = await axios.get("https://cointraq.onrender.com/getUser", {
+				const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/getUser`, {
 					withCredentials: true,
 				});
 				setUser(res.data.user);

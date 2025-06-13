@@ -11,7 +11,7 @@ function Logout() {
 		const logoutUser = async () => {
 			try {
 				await axios.post(
-					"https://cointraq.onrender.com/logout",
+					`${import.meta.env.VITE_BASE_URL}/logout`,
 					{},
 					{ withCredentials: true }
 				);

@@ -20,7 +20,7 @@ function EditModal({ onClose, transaction, queryKey }) {
 	const editMutation = useMutation({
 		mutationFn: ({ id, formData }) => {
 			return axios.patch(
-				`https://cointraq.onrender.com/transaction/update/${id}`,
+				`${import.meta.env.VITE_BASE_URL}/transaction/update/${id}`,
 				formData,
 				{
 					withCredentials: true,

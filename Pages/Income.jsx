@@ -38,7 +38,7 @@ function Income() {
 		queryKey: ["incomeTransactions", filterRange, customFromDate, customToDate],
 		queryFn: async () => {
 			const res = await axios.get(
-				`https://cointraq.onrender.com/transaction/income${buildQueryParams()}`,
+				`${import.meta.env.VITE_BASE_URL}/transaction/income${buildQueryParams()}`,
 				{ withCredentials: true }
 			);
 			return res.data.transactions;

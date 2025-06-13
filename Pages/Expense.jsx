@@ -45,7 +45,7 @@ function Expense() {
 		],
 		queryFn: async () => {
 			const res = await axios.get(
-				`https://cointraq.onrender.com/transaction/expense${buildQueryParams()}`,
+				`${import.meta.env.VITE_BASE_URL}/transaction/expense${buildQueryParams()}`,
 				{ withCredentials: true }
 			);
 			return res.data.transactions;

@@ -22,7 +22,7 @@ function Register() {
 	const handleSubmit = async function (e) {
 		e.preventDefault();
 		try {
-			const res = await axios.post("https://cointraq.onrender.com/", formData, {
+			const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/`, formData, {
 				withCredentials: true,
 			});
 			if (res.status === 201) {
@@ -38,7 +38,7 @@ function Register() {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const res = await axios.get("https://cointraq.onrender.com/authStatus", {
+				const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/authStatus`, {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
@@ -56,7 +56,7 @@ function Register() {
 	}, [navigate]);
 
 	const handleGoogleRegister = () => {
-		window.open("https://cointraq.onrender.com/auth/google", "_self");
+		window.open(`${import.meta.env.VITE_BASE_URL}/auth/google`, "_self");
 	};
 
 	return (

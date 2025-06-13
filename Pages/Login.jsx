@@ -23,7 +23,7 @@ function Login() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const res = await axios.post("https://cointraq.onrender.com/login", formData, {
+			const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/login`, formData, {
 				withCredentials: true,
 			});
 			if (res.status === 200) {
@@ -45,7 +45,7 @@ function Login() {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const res = await axios.get("https://cointraq.onrender.com/authStatus", {
+				const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/authStatus`, {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
@@ -62,8 +62,9 @@ function Login() {
 		checkAuth();
 	}, [navigate]);
 
+	
 	const handleGoogleLogin = () => {
-		window.open("https://cointraq.onrender.com/auth/google", "_self");
+		window.open(`${import.meta.env.VITE_BASE_URL}/auth/google`, "_self");
 	};
 
 	return (
