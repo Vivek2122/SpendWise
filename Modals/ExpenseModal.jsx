@@ -15,7 +15,7 @@ function ExportModal({ onClose }) {
 
 	const addExpenseMutation = useMutation({
 		mutationFn: async (formData) => {
-			await axios.post("https://SpendWise.onrender.com/transaction/expense", formData, {
+			await axios.post("https://cointraq.onrender.com/transaction/expense", formData, {
 				withCredentials: true,
 			});
 		},

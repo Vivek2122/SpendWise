@@ -45,7 +45,7 @@ function Expense() {
 		],
 		queryFn: async () => {
 			const res = await axios.get(
-				`https://SpendWise.onrender.com/transaction/expense${buildQueryParams()}`,
+				`https://cointraq.onrender.com/transaction/expense${buildQueryParams()}`,
 				{ withCredentials: true }
 			);
 			return res.data.transactions;

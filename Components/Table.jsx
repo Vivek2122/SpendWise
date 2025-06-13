@@ -16,7 +16,7 @@ function CustomTable({ transactions, queryKey }) {
 	const deleteMutation = useMutation({
 		mutationFn: async (id) => {
 			const res = await axios.delete(
-				`https://SpendWise.onrender.com/transaction/delete/${id}`,
+				`https://cointraq.onrender.com/transaction/delete/${id}`,
 				{ withCredentials: true }
 			);
 			return res.data.msg;

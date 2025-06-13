@@ -11,7 +11,7 @@ function Logout() {
 		const logoutUser = async () => {
 			try {
 				await axios.post(
-					"https://SpendWise.onrender.com/logout",
+					"https://cointraq.onrender.com/logout",
 					{},
 					{ withCredentials: true }
 				);

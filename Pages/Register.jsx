@@ -22,7 +22,7 @@ function Register() {
 	const handleSubmit = async function (e) {
 		e.preventDefault();
 		try {
-			const res = await axios.post("https://SpendWise.onrender.com/", formData, {
+			const res = await axios.post("https://cointraq.onrender.com/", formData, {
 				withCredentials: true,
 			});
 			if (res.status === 201) {
@@ -38,7 +38,7 @@ function Register() {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const res = await axios.get("https://SpendWise.onrender.com/authStatus", {
+				const res = await axios.get("https://cointraq.onrender.com/authStatus", {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
@@ -56,7 +56,7 @@ function Register() {
 	}, [navigate]);
 
 	const handleGoogleRegister = () => {
-		window.open("https://SpendWise.onrender.com/auth/google", "_self");
+		window.open("https://cointraq.onrender.com/auth/google", "_self");
 	};
 
 	return (
@@ -65,7 +65,7 @@ function Register() {
 			<div className="w-full lg:w-1/2 flex items-center justify-center py-16 px-6 sm:px-12 md:px-20 lg:px-24 xl:px-32">
 				<div className="w-full max-w-md">
 					<h3 className="text-3xl font-extrabold text-indigo-600 mb-6 mt-4">
-						SpendWise
+						CoinTraq
 					</h3>
 					<h2 className="text-2xl font-semibold text-gray-800 mb-2">
 						Create an Account

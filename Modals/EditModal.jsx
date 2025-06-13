@@ -20,7 +20,7 @@ function EditModal({ onClose, transaction, queryKey }) {
 	const editMutation = useMutation({
 		mutationFn: ({ id, formData }) => {
 			return axios.patch(
-				`https://SpendWise.onrender.com/transaction/update/${id}`,
+				`https://cointraq.onrender.com/transaction/update/${id}`,
 				formData,
 				{
 					withCredentials: true,

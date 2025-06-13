@@ -38,7 +38,7 @@ function Income() {
 		queryKey: ["incomeTransactions", filterRange, customFromDate, customToDate],
 		queryFn: async () => {
 			const res = await axios.get(
-				`https://SpendWise.onrender.com/transaction/income${buildQueryParams()}`,
+				`https://cointraq.onrender.com/transaction/income${buildQueryParams()}`,
 				{ withCredentials: true }
 			);
 			return res.data.transactions;

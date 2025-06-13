@@ -23,7 +23,7 @@ function Login() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const res = await axios.post("https://SpendWise.onrender.com/login", formData, {
+			const res = await axios.post("https://cointraq.onrender.com/login", formData, {
 				withCredentials: true,
 			});
 			if (res.status === 200) {
@@ -45,7 +45,7 @@ function Login() {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const res = await axios.get("https://SpendWise.onrender.com/authStatus", {
+				const res = await axios.get("https://cointraq.onrender.com/authStatus", {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
@@ -63,7 +63,7 @@ function Login() {
 	}, [navigate]);
 
 	const handleGoogleLogin = () => {
-		window.open("https://SpendWise.onrender.com/auth/google", "_self");
+		window.open("https://cointraq.onrender.com/auth/google", "_self");
 	};
 
 	return (
@@ -71,7 +71,7 @@ function Login() {
 			{/* Form Section */}
 			<div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-12 md:px-20 lg:px-32 py-12 sm:py-16">
 				<h3 className="text-3xl sm:text-4xl font-extrabold text-indigo-600 mb-6">
-					SpendWise
+					CoinTraq
 				</h3>
 				<h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">
 					Welcome Back

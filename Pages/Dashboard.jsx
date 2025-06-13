@@ -26,7 +26,7 @@ function Dashboard() {
 	const { data } = useQuery({
 		queryKey: ["allTransactions"],
 		queryFn: async () => {
-			const res = await axios.get("https://SpendWise.onrender.com/dashboard", {
+			const res = await axios.get("https://cointraq.onrender.com/dashboard", {
 				withCredentials: true,
 			});
 			return res.data.transactions;
