@@ -39,7 +39,7 @@ function Sidebar() {
 	}
 
 	return (
-		<aside className="fixed top-[68px] left-0 bottom-0 w-16 lg:w-64 bg-white border-r border-gray-200 p-3 lg:p-6 shadow-md overflow-auto z-20 transition-all duration-300">
+		<aside className="fixed top-16 left-0 bottom-0 w-16 lg:w-64 bg-white border-r border-gray-200 p-3 lg:p-6 shadow-md overflow-auto z-20 transition-all duration-300">
 			{/* Title - Only on large screens */}
 			<div className="mb-6 text-center hidden lg:block">
 				<p className="text-base text-gray-900 font-extrabold truncate">
