@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "../Pages/Login";
-import Register from "../Pages/Register";
-import Dashboard from "../Pages/Dashboard";
-import Income from "../Pages/Income";
-import Expense from "../Pages/Expense";
-import Logout from "../Pages/Logout";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Dashboard from "./Pages/Dashboard";
+import Income from "./Pages/Income";
+import Expense from "./Pages/Expense";
+import Logout from "./Pages/Logout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
