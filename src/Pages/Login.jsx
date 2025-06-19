@@ -49,7 +49,7 @@ function Login() {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
-					toast.info("Already logged in.");
+					toast.info("Logged in uccesfully.");
 					navigate("/dashboard");
 				}
 			} catch (err) {

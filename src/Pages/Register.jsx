@@ -42,7 +42,7 @@ function Register() {
 					withCredentials: true,
 				});
 				if (res.status === 200) {
-					toast.info("Already logged in.");
+					toast.info("Logged in successfully.");
 					navigate("/dashboard");
 				}
 			} catch (err) {
