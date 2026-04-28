@@ -204,6 +204,21 @@ import {
 } from "recharts";
 import axios from "axios";
 
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="bg-white p-3 border border-gray-100 rounded-lg shadow-lg">
+                <p className="font-bold text-gray-800 mb-1">{payload[0].payload.title}</p>
+                <p className="text-sm text-gray-500 mb-1">{label}</p>
+                <p className="text-sm font-semibold text-red-600">
+                    - ${payload[0].value}
+                </p>
+            </div>
+        );
+    }
+    return null;
+};
+
 function Expense() {
     const [showExpenseModal, setShowExpenseModal] = useState(false);
     const [filterRange, setFilterRange] = useState("all"); // all | 7 | 30 | 365 | custom
