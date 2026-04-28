@@ -247,14 +247,23 @@ function Expense() {
     }, [filterRange, customFromDate, customToDate, refetch]);
 
     // Prepare chart data
-    const chartData = data
-        ? [...data]
-                .sort((a, b) => new Date(a.date) - new Date(b.date))
-                .map((tx) => ({
-                    date: tx.date.slice(0, 10),
-                    amount: tx.amount,
-                }))
-        : [];
+    // const chartData = data
+    //     ? [...data]
+    //             .sort((a, b) => new Date(a.date) - new Date(b.date))
+    //             .map((tx) => ({
+    //                 date: tx.date.slice(0, 10),
+    //                 amount: tx.amount,
+    //             }))
+    //     : [];
+	const chartData = data
+     ? [...data]
+             .sort((a, b) => new Date(a.date) - new Date(b.date))
+             .map((tx) => ({
+                 date: tx.date.slice(0, 10),
+                 amount: tx.amount,
+                 title: tx.title || tx.name, // <--- Add this line
+             }))
+     : [];
 
     return (
         <div className="overflow-x-hidden bg-gray-50 min-h-screen">
@@ -358,11 +367,12 @@ function Expense() {
                                         tick={{ fill: '#6b7280', fontSize: 12 }}
                                         tickFormatter={(value) => `$${value}`}
                                     />
-                                    <Tooltip 
+                                    {/* <Tooltip 
                                         cursor={{ fill: '#f3f4f6' }}
                                         contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                                         formatter={(value) => [`$${value}`, 'Amount']}
-                                    />
+                                    /> */}
+									<Tooltip cursor={{ fill: '#f3f4f6' }} content={<CustomTooltip />} />
                                     <Bar
                                         dataKey="amount"
                                         fill="#ef4444"
