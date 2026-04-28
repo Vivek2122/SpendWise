@@ -195,7 +195,8 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="bg-white p-3 border border-gray-100 rounded-lg shadow-lg">
-                <p className="font-bold text-gray-800 mb-1">{payload[0].payload.title}</p>
+                {/* Change this to .source */}
+                <p className="font-bold text-gray-800 mb-1">{payload[0].payload.source}</p> 
                 <p className="text-sm text-gray-500 mb-1">{label}</p>
                 <p className="text-sm font-semibold text-green-600">
                     + ${payload[0].value}
@@ -243,14 +244,14 @@ function Income() {
 
     // Added 'title' to the data mapping so the Tooltip can access it
     const chartData = data
-        ? [...data]
-                .sort((a, b) => new Date(a.date) - new Date(b.date))
-                .map((tx) => ({
-                    date: tx.date.slice(0, 10),
-                    amount: tx.amount,
-                    title: tx.title || tx.name, // Grabs the title of the transaction
-                }))
-        : [];
+		? [...data]
+				.sort((a, b) => new Date(a.date) - new Date(b.date))
+				.map((tx) => ({
+					date: tx.date.slice(0, 10),
+					amount: tx.amount,
+					source: tx.source, // <--- Change this line!
+				}))
+		: [];
 
     return (
         <div className="overflow-x-hidden bg-gray-50 min-h-screen">
